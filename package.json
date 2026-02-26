@@ -1,20 +1,29 @@
 {
-  "name": "todoist",
-  "version": "1.0.0",
-  "main": "module",
-  "scripts": {
-    "test:login": "npx playwright test pom/tests/example.spec.ts --headed --project=chromium"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@playwright/test": "^1.58.2",
-    "@types/node": "^25.3.0"
-  },
-  "dependencies": {
-    "dotenv": "^17.3.1",
-    "typescript": "^5.9.3"
-  }
+	"name": "todoist",
+	"version": "1.0.0",
+	"main": "module",
+	"scripts": {
+		"test:login": "npx playwright test pom/tests/example.spec.ts --headed --project=chromium",
+		"prettier": "prettier --check .",
+		"prettier:fix": "prettier --write .",
+		"lint": "eslint ."
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"devDependencies": {
+		"@eslint/js": "^10.0.1",
+		"@playwright/test": "^1.58.2",
+		"@types/node": "^25.3.0",
+		"eslint": "^10.0.2",
+		"prettier": "3.8.1",
+		"typescript": "^5.9.3",
+		"typescript-eslint": "^8.56.1"
+	},
+	"dependencies": {
+		"dotenv": "^17.3.1",
+		"typescript": "^5.9.3",
+		"@typescript-eslint/eslint-plugin": "^8.56.1"
+	}
 }
