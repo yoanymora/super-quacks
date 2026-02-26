@@ -20,7 +20,7 @@ test('get started link', async ({ page }) => {
 });
 
 
-test.skip('should be able to login correctly', async ({ page }) => {
+test('3 - should be able to login correctly', async ({ page }) => {
 
   const loginPage = new LoginPage(page);
 

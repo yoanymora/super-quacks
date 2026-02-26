@@ -25,3 +25,7 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+run: npx playwright test
+      env:
+        STANDARD_USER: ${{ secrets.STANDARD_USER }}
+        PASSWORD: ${{ secrets.PASSWORD }}
