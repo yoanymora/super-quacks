@@ -1,5 +1,6 @@
 import { type Page, type Locator } from "@playwright/test";
 import { BasePage } from "./base.page";
+import { LOGIN_URL } from "../data/Constants";
 
 export class LoginPage extends BasePage {
 	readonly emailInput: Locator;
@@ -17,6 +18,7 @@ export class LoginPage extends BasePage {
 	}
 
 	async login(user: string, pass: string) {
+		await this.goto(LOGIN_URL);
 		await this.emailInput.fill(user);
 		await this.passwordInput.fill(pass);
 		await this.loginButton.click();

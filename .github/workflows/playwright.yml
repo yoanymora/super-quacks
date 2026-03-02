@@ -34,6 +34,7 @@ jobs:
         env:
           STANDARD_USER: ${{ secrets.STANDARD_USER }}
           PASSWORD: ${{ secrets.PASSWORD }}
+          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
         run: npx playwright test
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}

@@ -4,6 +4,7 @@
 	"main": "module",
 	"scripts": {
 		"test:login": "npx playwright test pom/tests/example.spec.ts --headed --project=chromium",
+		"test:addTask": "npx playwright test pom/tests/addTask.spec.ts --headed --project=chromium",
 		"prettier": "prettier --check .",
 		"prettier:fix": "prettier --write .",
 		"lint": "eslint ."
