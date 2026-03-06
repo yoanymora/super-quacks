@@ -9,6 +9,7 @@ export class SideBar {
 	readonly searchButton: Locator;
 	readonly inboxButton: Locator;
 	readonly todayButton: Locator;
+	readonly todayCounter: Locator;
 	readonly upcommingButton: Locator;
 	readonly filtersNLabelsButton: Locator;
 	readonly completedButton: Locator;
@@ -33,6 +34,9 @@ export class SideBar {
 		this.searchButton = page.getByRole("button", { name: "Search" });
 		this.inboxButton = page.locator("[id='sidebar-list-item-1']");
 		this.todayButton = page.locator("[id='sidebar-list-item-2']");
+		this.todayCounter = this.todayButton.locator(
+			"span[data-project-actions='true'] div span"
+		);
 		this.upcommingButton = page.getByRole("link", { name: "Upcoming" });
 		this.filtersNLabelsButton = page.getByRole("link", {
 			name: "Filters & Labels",
@@ -49,5 +53,9 @@ export class SideBar {
 			name: "Toggle list of My Projects",
 		});
 		this.projectsList = page.locator("#projects_list");
+	}
+
+	async awaitForVisibleRoot() {
+		await this.sideBar.isVisible();
 	}
 }

@@ -6,6 +6,8 @@
 		"test:login": "npx playwright test pom/tests/ui/login.spec.ts --headed --project=chromium",
 		"test:today": "npx playwright test pom/tests/ui/today.spec.ts --headed --project=chromium",
 		"test:api-create": "npx playwright test pom/tests/api/create.spec.ts --headed --project=chromium",
+		"test:sidebar": "npx playwright test pom/tests/ui/sidebar.spec.ts",
+		"test:ui": "npx playwright test --ui",
 		"prettier": "prettier --check .",
 		"prettier:fix": "prettier --write .",
 		"lint": "eslint ."

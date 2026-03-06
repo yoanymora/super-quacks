@@ -5,7 +5,7 @@ import { defineConfig, globalIgnores } from "eslint/config";
 import tseslint from "typescript-eslint";
 
 export default defineConfig(
-	globalIgnores(["eslint.config.mjs"]),
+	globalIgnores(["eslint.config.mjs", "playwright-report"]),
 	eslint.configs.recommended,
 	tseslint.configs.recommended,
 	{
