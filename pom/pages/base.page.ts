@@ -1,6 +1,6 @@
 import { type Page } from "@playwright/test";
 import { Common } from "../common/common";
-import { BEARER } from "../data/Constants";
+import { AUTH_TOKEN, API_URL } from "../data/Constants";
 
 export abstract class BasePage {
 	protected readonly page: Page;
@@ -16,12 +16,12 @@ export abstract class BasePage {
 	}
 
 	async addTask(title: string, desc: string) {
-		await this.common.addTask(title, desc); //add variables to constants
+		await this.common.addTask(title, desc);
 	}
 
-	async getTaskId(taskTitle:string){
+	async getTaskId(taskTitle: string) {
 		const response = await this.page.waitForResponse(async (resp) => {
-			if (!resp.url().includes('api/v1/sync') || resp.status() !== 200) {
+			if (!resp.url().includes("api/v1/sync") || resp.status() !== 200) {
 				return false;
 			}
 			const body = await resp.json();
@@ -29,17 +29,19 @@ export abstract class BasePage {
 		});
 
 		const responseJson = await response.json();
-		const createdTask = responseJson.items.find(item => item.content === taskTitle);
+		const createdTask = responseJson.items.find(
+			(item) => item.content === taskTitle
+		);
 		const taskId = createdTask ? createdTask.id : responseJson.items[0].id;
-		return taskId.toString(); 
+		return taskId.toString();
 	}
 
 	async deleteTask(taskId: string) {
-		await this.page.request.delete(`https://api.todoist.com/api/v1/tasks/${taskId}`, {
+		await this.page.request.delete(`${API_URL}/tasks/${taskId}`, {
 			headers: {
-			"Authorization": `Bearer `,
-			'Content-Type': 'application/json'
-			}
+				Authorization: `Bearer ${AUTH_TOKEN.AUTH_TOKEN}`,
+				"Content-Type": "application/json",
+			},
 		});
 	}
 }
