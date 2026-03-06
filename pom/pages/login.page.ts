@@ -10,7 +10,6 @@ export class LoginPage extends BasePage {
 
 	constructor(page: Page) {
 		super(page);
-		// 2. Initialize Locators in the constructor
 		this.emailInput = page.locator("input[type=email]");
 		this.passwordInput = page.locator("input[type=password]");
 		this.loginButton = page.locator("button[type=submit]");
