@@ -1,23 +1,12 @@
-import { type Page } from "@playwright/test";
-import { Common } from "../common/common";
 import { AUTH_TOKEN } from "../data/Constants";
-import { API_URL } from "../data/urls";
+import { TASKS_URL } from "../data/urls";
+import { type Page } from "@playwright/test";
 
-export abstract class BasePage {
-	protected readonly page: Page;
-	protected readonly common: Common;
+export class TaskService {
+	readonly page: Page;
 
 	constructor(page: Page) {
 		this.page = page;
-		this.common = new Common(this.page);
-	}
-
-	async goto(url: string) {
-		await this.page.goto(url);
-	}
-
-	async addTask(title: string, desc: string) {
-		await this.common.addTask(title, desc);
 	}
 
 	async getTaskId(taskTitle: string) {
@@ -38,7 +27,7 @@ export abstract class BasePage {
 	}
 
 	async deleteTask(taskId: string) {
-		await this.page.request.delete(`${API_URL}/tasks/${taskId}`, {
+		await this.page.request.delete(`${TASKS_URL}/${taskId}`, {
 			headers: {
 				Authorization: `Bearer ${AUTH_TOKEN.AUTH_TOKEN}`,
 				"Content-Type": "application/json",

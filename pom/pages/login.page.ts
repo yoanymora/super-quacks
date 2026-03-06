@@ -1,6 +1,6 @@
 import { type Page, type Locator } from "@playwright/test";
 import { BasePage } from "./base.page";
-import { LOGIN_URL } from "../data/Constants";
+import { LOGIN_URL } from "../data/urls";
 
 export class LoginPage extends BasePage {
 	readonly emailInput: Locator;
