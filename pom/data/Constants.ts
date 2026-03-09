@@ -18,3 +18,21 @@ export const TASK_DETAILS = {
 	TITLE: "New task",
 	DESC: "Description",
 };
+
+export const LABELS = {
+	FOOD: "Food",
+	SHOPPING: "Shopping",
+	WORK: "Work",
+	LEISURE: "Leisure",
+};
+
+export const PRIORITY = {
+	LOW: 4,
+	MEDIUM: 3,
+	HIGH: 2,
+	URGENT: 1,
+};
+
+export const DUE_DATE = {
+	TODAY: new Date().toISOString().split("T")[0],
+};

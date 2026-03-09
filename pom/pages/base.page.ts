@@ -1,7 +1,5 @@
 import { type Page } from "@playwright/test";
 import { Common } from "../common/common";
-import { AUTH_TOKEN } from "../data/Constants";
-import { API_URL } from "../data/urls";
 
 export abstract class BasePage {
 	protected readonly page: Page;
@@ -31,18 +29,9 @@ export abstract class BasePage {
 
 		const responseJson = await response.json();
 		const createdTask = responseJson.items.find(
-			(item) => item.content === taskTitle
+			(item: { content: string }) => item.content === taskTitle
 		);
 		const taskId = createdTask ? createdTask.id : responseJson.items[0].id;
 		return taskId.toString();
-	}
-
-	async deleteTask(taskId: string) {
-		await this.page.request.delete(`${API_URL}/tasks/${taskId}`, {
-			headers: {
-				Authorization: `Bearer ${AUTH_TOKEN.AUTH_TOKEN}`,
-				"Content-Type": "application/json",
-			},
-		});
 	}
 }
