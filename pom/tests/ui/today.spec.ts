@@ -1,13 +1,11 @@
 import { test, expect } from "@playwright/test";
 import { LoginPage } from "../../pages/login.page";
-import { USER_CREDENTIALS } from "../../data/Constants";
 import { TodayPage } from "../../pages/today.page";
-import { TASK_DETAILS } from "../../data/Constants";
+import { TASK_DETAILS, DUE_DATE, USER_CREDENTIALS } from "../../data/Constants";
 import { TaskService } from "../../services/task";
 import { Common } from "../../common/common";
 import { type Task } from "../../data/Interfaces";
 import { TODAY_URL } from "../../data/urls";
-import { DUE_DATE } from "../../data/Constants";
 import { DeleteModalComponent } from "../../components/deleteModal.component";
 import { TaskCardComponent } from "../../components/taskCard.component";
 
@@ -55,6 +53,19 @@ test.describe("Task Management", async () => {
 		await expect(taskCard).toBeVisible();
 		await taskCardComponent.deleteTaskFromMenu();
 		await deleteModalComponent.confirmDelete();
+		await expect(taskCard).not.toBeVisible();
+	});
+
+	test("TC10 - Complete task", async ({ page }) => {
+		await taskService.createTaskViaAPI({
+			content: TASK_DETAILS.TITLE,
+			due_string: DUE_DATE.TODAY,
+		});
+		taskId = await taskService.getTaskId(TASK_DETAILS.TITLE);
+		const taskCardComponent = new TaskCardComponent(page, taskId);
+		const taskCard = taskCardComponent.taskCardRoot;
+		await expect(taskCard).toBeVisible();
+		await taskCardComponent.clickCheck();
 		await expect(taskCard).not.toBeVisible();
 	});
 });
