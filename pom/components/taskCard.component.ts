@@ -5,12 +5,14 @@ export class TaskCardComponent {
 	readonly page: Page;
 	public taskCardRoot: Locator;
 	readonly menuOption: Locator;
+	public taskCardCheck: Locator;
 
 	constructor(page: Page, id: string) {
 		this.page = page;
 		this._taskId = id;
 		this.taskCardRoot = this.computeTaskCardRoot();
 		this.menuOption = this.page.getByRole("menu", { name: "task edit menu" });
+		this.taskCardCheck = this.computeTaskCardCheck();
 	}
 
 	get taskId() {
@@ -20,6 +22,7 @@ export class TaskCardComponent {
 	set taskId(id: string) {
 		this._taskId = id;
 		this.taskCardRoot = this.computeTaskCardRoot();
+		this.taskCardCheck = this.computeTaskCardCheck();
 	}
 
 	get taskCardMoreMenu() {
@@ -48,5 +51,14 @@ export class TaskCardComponent {
 	async editTaskFromMenu() {
 		await this.openTaskCardMenu();
 		await this.openEditTask();
+	}
+
+	computeTaskCardCheck() {
+		return this.taskCardRoot.getByRole("checkbox");
+	}
+
+	async clickCheck() {
+		await this.taskCardCheck.isVisible();
+		await this.taskCardCheck.click();
 	}
 }
