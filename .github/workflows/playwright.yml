@@ -4,6 +4,13 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  pull-requests: write
+
 jobs:
   lints:
     runs-on: ubuntu-latest
@@ -30,12 +37,38 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Run Playwright tests
+      - name: Run Playwright tests and generate report
         env:
           STANDARD_USER: ${{ secrets.STANDARD_USER }}
           PASSWORD: ${{ secrets.PASSWORD }}
           AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
         run: npx playwright test
+      - name: Get Allure history
+        uses: actions/checkout@v4
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: allure-results
+          allure_history: allure-history
+          keep_reports: 20
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: allure-history
+      - name: Post link to PR
+        if: always() && github.event_name == 'pull_request'
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            📊 **Allure Report disponible aquí:** (https://${{ github.repository_owner }}.github.io/super-quacks/)
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
