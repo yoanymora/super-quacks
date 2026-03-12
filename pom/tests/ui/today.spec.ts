@@ -10,6 +10,7 @@ import { TODAY_URL } from "../../data/urls";
 import { DUE_DATE } from "../../data/Constants";
 import { DeleteModalComponent } from "../../components/deleteModal.component";
 import { TaskCardComponent } from "../../components/taskCard.component";
+import { TaskEditor } from "../../components/taskEditor.component";
 
 test.describe("Task Management", async () => {
 	let loginPage: LoginPage;
@@ -17,12 +18,14 @@ test.describe("Task Management", async () => {
 	let taskService: TaskService;
 	let taskId: string = "";
 	let deleteModalComponent: DeleteModalComponent;
+	let taskEditor: TaskEditor;
 
 	test.beforeEach(async ({ page }) => {
 		loginPage = new LoginPage(page);
 		todayPage = new TodayPage(page);
 		taskService = new TaskService(page);
 		deleteModalComponent = new DeleteModalComponent(page);
+		taskEditor = new TaskEditor(page);
 
 		await loginPage.login(
 			USER_CREDENTIALS.STANDARD_USER,
@@ -56,6 +59,23 @@ test.describe("Task Management", async () => {
 		await taskCardComponent.deleteTaskFromMenu();
 		await deleteModalComponent.confirmDelete();
 		await expect(taskCard).not.toBeVisible();
+	});
+
+	test("TC05 - Edit task successfully", async ({ page }) => {
+		const newTitle = "Updated Task Title";
+		const taskService = new TaskService(page);
+		const task = await taskService.createTaskViaAPI({
+			content: TASK_DETAILS.TITLE,
+			description: TASK_DETAILS.DESC,
+			due_string: DUE_DATE.TODAY,
+		});
+		taskId = task.id;
+		const taskCardComponent = new TaskCardComponent(page, taskId);
+		const taskCard = taskCardComponent.taskCardRoot;
+		await expect(taskCard).toBeVisible();
+		await taskCardComponent.editTaskFromMenu();
+		await taskEditor.updateTaskTitle(newTitle);
+		await expect(taskCard.getByText(newTitle)).toBeVisible();
 	});
 });
 

@@ -18,9 +18,7 @@ export class TaskEditor {
 
 	constructor(page: Page) {
 		this.taskEditorForm = page.locator("[data-testid='task-editor']");
-		this.taskTitleInput = page
-			.getByRole("textbox", { name: "Task name" })
-			.getByRole("paragraph");
+		this.taskTitleInput = page.getByLabel("Task name").getByRole("paragraph");
 		this.taskDescriptionInput = page
 			.getByRole("textbox", { name: "Description" })
 			.getByRole("paragraph");
@@ -37,5 +35,10 @@ export class TaskEditor {
 		this.submitTaskButton = page.locator(
 			'[data-testid="task-editor-submit-button"]'
 		);
+	}
+
+	async updateTaskTitle(newTitle: string) {
+		await this.taskTitleInput.fill(newTitle);
+		await this.submitTaskButton.click();
 	}
 }

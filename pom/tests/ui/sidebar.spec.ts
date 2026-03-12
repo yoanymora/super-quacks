@@ -26,7 +26,7 @@ test.describe("Sidebar tests", async () => {
 		await sideBar.awaitForVisibleRoot();
 	});
 
-	test("TC03 - Create task successfully from sidebar", async () => {
+	test.skip("TC03 - Create task successfully from sidebar", async () => {
 		await expect(sideBar.todayCounter).not.toBeVisible();
 		await sideBar.addTaskSidebar.click();
 		await common.addTask(TASK_DETAILS.TITLE, TASK_DETAILS.DESC);

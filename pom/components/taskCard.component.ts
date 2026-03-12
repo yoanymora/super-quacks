@@ -4,11 +4,13 @@ export class TaskCardComponent {
 	private _taskId: string;
 	readonly page: Page;
 	public taskCardRoot: Locator;
+	readonly menuOption: Locator;
 
 	constructor(page: Page, id: string) {
 		this.page = page;
 		this._taskId = id;
 		this.taskCardRoot = this.computeTaskCardRoot();
+		this.menuOption = this.page.getByRole("menu", { name: "task edit menu" });
 	}
 
 	get taskId() {
@@ -32,13 +34,19 @@ export class TaskCardComponent {
 
 	async deleteTaskFromMenu() {
 		await this.openTaskCardMenu();
-		await this.page
-			.getByRole("menu", { name: "task edit menu" })
-			.getByRole("menuitem", { name: "Delete" })
-			.click();
+		await this.menuOption.getByRole("menuitem", { name: "Delete" }).click();
 	}
 
 	computeTaskCardRoot() {
 		return this.page.locator(`#task-${this.taskId}`);
+	}
+
+	async openEditTask() {
+		await this.menuOption.getByRole("menuitem", { name: "Edit" }).click();
+	}
+
+	async editTaskFromMenu() {
+		await this.openTaskCardMenu();
+		await this.openEditTask();
 	}
 }
