@@ -1,0 +1,219 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to task list" [ref=e3] [cursor=pointer]:
+      - /url: "#content"
+    - generic [ref=e4]:
+      - navigation [ref=e7]:
+        - generic [ref=e9]:
+          - button "Settings" [ref=e11] [cursor=pointer]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - img
+                    - generic:
+                      - img
+            - generic:
+              - generic:
+                - generic: Test
+                - img
+          - generic [ref=e12]:
+            - link "Notifications" [ref=e14] [cursor=pointer]:
+              - /url: /app/notifications
+              - generic:
+                - img
+            - button "Open/close sidebar" [expanded] [ref=e15] [cursor=pointer]:
+              - generic:
+                - img
+        - generic [ref=e16]:
+          - button "Add task" [ref=e17] [cursor=pointer]:
+            - generic:
+              - img
+            - generic: Add task
+          - button "Dictate tasks with Ramble" [ref=e18] [cursor=pointer]:
+            - generic:
+              - img
+        - 'navigation "Main Navigation: contains Projects, Labels, and Filters" [ref=e22]':
+          - list "Main filters" [ref=e23]:
+            - listitem "Search" [ref=e24]:
+              - button "Search" [ref=e27] [cursor=pointer]:
+                - img [ref=e29]
+                - generic [ref=e32]: Search
+            - button "Inbox, 2 tasks" [disabled] [ref=e35]:
+              - listitem "Inbox, 2 tasks" [ref=e36]:
+                - generic [ref=e38]:
+                  - link "Inbox, 2 tasks" [disabled] [ref=e39] [cursor=pointer]:
+                    - /url: /app/inbox
+                    - img [ref=e41]
+                    - generic [ref=e44]: Inbox
+                  - generic [ref=e47]: "2"
+            - listitem "Today, 1 task" [ref=e49]:
+              - generic [ref=e51]:
+                - link "Today, 1 task" [ref=e52] [cursor=pointer]:
+                  - /url: /app/today
+                  - img [ref=e54]:
+                    - generic [ref=e56]: "12"
+                  - generic [ref=e58]: Today
+                - generic [ref=e61]: "1"
+            - listitem "Upcoming" [ref=e62]:
+              - link "Upcoming" [ref=e65] [cursor=pointer]:
+                - /url: /app/upcoming
+                - img [ref=e67]
+                - generic [ref=e70]: Upcoming
+            - listitem "Filters & Labels" [ref=e73]:
+              - link "Filters & Labels" [ref=e76] [cursor=pointer]:
+                - /url: /app/filters-labels
+                - img [ref=e78]
+                - generic [ref=e81]: Filters & Labels
+            - listitem "Completed" [ref=e84]:
+              - link "Completed" [ref=e87] [cursor=pointer]:
+                - /url: /app/activity?eventType=item%3Acompleted&userId=57703637
+                - img [ref=e89]
+                - generic [ref=e92]: Completed
+            - button "More" [ref=e95]:
+              - button "More" [ref=e98] [cursor=pointer]:
+                - img [ref=e100]
+                - generic [ref=e106]: More
+          - generic [ref=e109]:
+            - generic [ref=e111]:
+              - generic [ref=e113]:
+                - link "My Projects" [ref=e114] [cursor=pointer]:
+                  - /url: /app/projects
+                  - img [ref=e117]
+                  - generic [ref=e119]: My Projects
+                - button "My projects menu" [ref=e121] [cursor=pointer]:
+                  - img
+                - button "Toggle list of My Projects" [expanded] [ref=e123] [cursor=pointer]:
+                  - img
+              - list "Projects" [ref=e129]:
+                - generic [ref=e133]:
+                  - button "2, 10 tasks More actions" [ref=e136]:
+                    - listitem "2, 10 tasks More actions" [ref=e137]:
+                      - generic [ref=e139]:
+                        - link "2, 10 tasks" [ref=e140] [cursor=pointer]:
+                          - /url: /app/project/2-6g4rrWrrW7VfH7W2
+                          - img [ref=e142]
+                          - generic [ref=e145]: "2"
+                        - generic [ref=e147]:
+                          - generic [ref=e148]: "10"
+                          - button "More actions" [ref=e150] [cursor=pointer]:
+                            - img
+                  - button "3, 0 tasks More actions" [ref=e153]:
+                    - listitem "3, 0 tasks More actions" [ref=e154]:
+                      - generic [ref=e156]:
+                        - link "3, 0 tasks" [ref=e157] [cursor=pointer]:
+                          - /url: /app/project/3-6g5XPWFJPxFGVxVf
+                          - img [ref=e159]
+                          - generic [ref=e162]: "3"
+                        - button "More actions" [ref=e166] [cursor=pointer]:
+                          - img
+            - generic [ref=e168]:
+              - generic [ref=e170]:
+                - link "Test Dummy" [ref=e171] [cursor=pointer]:
+                  - /url: /app/540928
+                  - img [ref=e172]
+                  - generic [ref=e174]: Test Dummy
+                - button "Workspace menu" [ref=e176] [cursor=pointer]:
+                  - img
+                - button "Toggle list of Test Dummy" [expanded] [ref=e178] [cursor=pointer]:
+                  - img
+              - list [ref=e184]:
+                - button "Team Setup Guide, 16 tasks More actions" [ref=e190]:
+                  - listitem "Team Setup Guide, 16 tasks More actions" [ref=e191]:
+                    - generic [ref=e193]:
+                      - link "Team Setup Guide, 16 tasks" [ref=e194] [cursor=pointer]:
+                        - /url: /app/project/team-setup-guide-6g4rrGxwjFJ8jHfJ
+                        - img [ref=e196]
+                        - generic [ref=e199]: Team Setup Guide
+                        - img [ref=e202]
+                      - generic [ref=e205]:
+                        - generic [ref=e206]: "16"
+                        - button "More actions" [ref=e208] [cursor=pointer]:
+                          - img
+                - listitem "Browse all projects" [ref=e209]:
+                  - link "Browse all projects" [ref=e212] [cursor=pointer]:
+                    - /url: /app/540928/projects/active
+                    - img [ref=e214]
+                    - generic [ref=e217]: Browse all projects
+        - button "Help & resources" [ref=e221] [cursor=pointer]:
+          - generic:
+            - generic:
+              - img
+          - generic: Help & resources
+      - main "Main Content" [active] [ref=e224]:
+        - generic [ref=e227]:
+          - 'generic "Header: contains title, subtitle, actions and options related to the current view" [ref=e228]':
+            - generic [ref=e231]:
+              - generic [ref=e233]:
+                - button "Connect calendar" [ref=e234] [cursor=pointer]:
+                  - generic:
+                    - img
+                  - generic: Connect calendar
+                - button "Dismiss" [ref=e235] [cursor=pointer]:
+                  - img
+              - button "View Options Menu" [ref=e236] [cursor=pointer]:
+                - generic:
+                  - img
+                - generic: "Display: 1"
+            - generic [ref=e238]:
+              - heading "Today" [level=1] [ref=e241]
+              - generic [ref=e246]:
+                - img [ref=e247]
+                - generic [ref=e249]: 1 task
+          - generic [ref=e250]:
+            - region "(No Section)" [ref=e251]:
+              - generic [ref=e252]:
+                - generic [ref=e253]:
+                  - heading "Overdue" [level=3] [ref=e254]
+                  - paragraph [ref=e255]: "1"
+                - button "Reschedule" [ref=e257] [cursor=pointer]:
+                  - generic: Reschedule
+              - group "Overdue 1 Reschedule" [ref=e258]:
+                - 'group "Task: task" [ref=e264] [cursor=pointer]':
+                  - generic [ref=e265]:
+                    - button "Open task details" [ref=e266]
+                    - checkbox "Checkbox for task" [ref=e268]:
+                      - img
+                    - generic [ref=e271]:
+                      - generic [ref=e273]:
+                        - generic [ref=e274]: "Task:"
+                        - generic [ref=e276]: task
+                      - generic [ref=e278]:
+                        - 'button "Date: Yesterday" [ref=e279]':
+                          - generic [ref=e280]: "Date:"
+                          - generic [ref=e281]:
+                            - img [ref=e282]
+                            - generic [ref=e284]: Yesterday
+                        - link "Inbox" [ref=e286]:
+                          - /url: /app/inbox#task-6g8Q7m6Vqqhcv2RC
+                          - img [ref=e287]
+                          - generic [ref=e290]: Inbox
+              - generic "Overdue 1 Reschedule" [ref=e291]
+            - region "(No Section)" [ref=e292]:
+              - generic [ref=e294]:
+                - heading "Mar 12 ‧ Today" [level=3] [ref=e295]
+                - paragraph [ref=e296]: "0"
+              - group "Mar 12 ‧ Today 0" [ref=e297]
+              - generic "Mar 12 ‧ Today 0" [ref=e299]:
+                - button "Add task to Mar 12 ‧ Today" [ref=e301] [cursor=pointer]:
+                  - img [ref=e303]
+                  - text: Add task
+    - status [ref=e305]
+  - alert [ref=e306]:
+    - generic [ref=e308]:
+      - generic [ref=e309]: Update time zone to UTC?
+      - generic [ref=e310]:
+        - text: Go to
+        - link "Date & time" [ref=e311] [cursor=pointer]:
+          - /url: /app/settings/general
+        - text: settings.
+    - button "Update" [ref=e313] [cursor=pointer]:
+      - generic: Update
+    - button "Keep current" [ref=e315] [cursor=pointer]:
+      - img
+```
