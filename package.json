@@ -7,6 +7,7 @@
 		"test:today": "npx playwright test pom/tests/ui/today.spec.ts --headed --project=chromium",
 		"test:api-create": "npx playwright test pom/tests/api/create.spec.ts --headed --project=chromium",
 		"test:sidebar": "npx playwright test pom/tests/ui/sidebar.spec.ts",
+		"test:tasks": "npx playwright test pom/tests/ui/tasks.spec.ts --headed --project=chromium",
 		"test:ui": "npx playwright test --ui",
 		"prettier": "prettier --check .",
 		"prettier:fix": "prettier --write .",
@@ -28,6 +29,7 @@
 	},
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "^8.56.1",
+		"allure": "^3.3.1",
 		"dotenv": "^17.3.1",
 		"typescript": "^5.9.3"
 	}
