@@ -1,6 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","1688","should display the correct error message for invalid credentials","chromium","Wed Mar 11 22:50:34 UTC 2026","passed","Wed Mar 11 22:50:36 UTC 2026","Login tests","ui/login.spec.ts","",""
-"","5181","should be able to login correctly","chromium","Wed Mar 11 22:50:29 UTC 2026","passed","Wed Mar 11 22:50:34 UTC 2026","Login tests","ui/login.spec.ts","",""
-"","30150","should be able to create a task correctly","chromium","Wed Mar 11 22:52:54 UTC 2026","broken","Wed Mar 11 22:53:24 UTC 2026","Task Management","ui/today.spec.ts","",""
-"","1253","should be able to create a task via API correctly for today","chromium","Wed Mar 11 22:50:27 UTC 2026","passed","Wed Mar 11 22:50:29 UTC 2026","API - Create Task","api/create.spec.ts","",""
-"","30164","TC03 - Create task successfully from sidebar","chromium","Wed Mar 11 22:51:20 UTC 2026","broken","Wed Mar 11 22:51:50 UTC 2026","Sidebar tests","ui/sidebar.spec.ts","",""
