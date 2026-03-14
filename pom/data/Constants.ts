@@ -38,3 +38,7 @@ export const PRIORITY = {
 export const DUE_DATE = {
 	TODAY: new Date().toISOString().split("T")[0],
 };
+
+export const COMMENT = {
+	CONTENT: "This is a comment",
+};

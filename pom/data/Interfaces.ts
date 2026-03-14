@@ -13,3 +13,9 @@ export interface Task {
 	due_datetime?: string;
 	due_lang?: string;
 }
+
+export interface Comment {
+	content: string;
+	task_id: string | null;
+	project_id?: string | null;
+}
