@@ -1,8 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","4839","should be able to login correctly","chromium","Thu Mar 12 17:57:05 UTC 2026","passed","Thu Mar 12 17:57:10 UTC 2026","Login tests","ui/login.spec.ts","",""
-"","2176","should display the correct error message for invalid credentials","chromium","Thu Mar 12 17:57:10 UTC 2026","passed","Thu Mar 12 17:57:12 UTC 2026","Login tests","ui/login.spec.ts","",""
-"","7345","TC03 - Create task successfully from sidebar","chromium","Thu Mar 12 17:57:12 UTC 2026","passed","Thu Mar 12 17:57:19 UTC 2026","Sidebar tests","ui/sidebar.spec.ts","",""
-"","7619","TC04 - Delete task successfully","chromium","Thu Mar 12 17:57:26 UTC 2026","passed","Thu Mar 12 17:57:34 UTC 2026","Task Management","ui/today.spec.ts","",""
-"","1190","should be able to create a task via API correctly for today","chromium","Thu Mar 12 17:57:03 UTC 2026","passed","Thu Mar 12 17:57:04 UTC 2026","API - Create Task","api/create.spec.ts","",""
-"","6827","should be able to create a task correctly","chromium","Thu Mar 12 17:57:19 UTC 2026","passed","Thu Mar 12 17:57:26 UTC 2026","Task Management","ui/today.spec.ts","",""
-"","5249","Should dismiss add task modal","chromium","Thu Mar 12 17:57:34 UTC 2026","passed","Thu Mar 12 17:57:39 UTC 2026","Page Functionality","ui/today.spec.ts","",""
